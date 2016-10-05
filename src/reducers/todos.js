@@ -28,6 +28,8 @@ const todos = (state = [], action) => {
         ...state,
         todo(undefined, action)
       ]
+    case 'DELETE_TODO':
+      return state.filter(todo => todo.id !== action.payload)
     case 'TOGGLE_TODO':
       return state.map(t =>
         todo(t, action)

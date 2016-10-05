@@ -1,11 +1,12 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import App from './components/App'
 import reducer from './reducers'
+import undoMiddleware from './undoMiddleware'
 
-const store = createStore(reducer, window.devToolsExtension())
+const store = createStore(reducer, applyMiddleware(undoMiddleware))
 
 render(
   <Provider store={store}>
