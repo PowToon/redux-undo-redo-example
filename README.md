@@ -1,4 +1,6 @@
-# Redux Todos with Undo Example
+# ReduxUndoRedo Example
+
+this is a version of todos-with-undo redux example that uses `redux-undo-redo` instead of `redux-undo`
 
 This project template was built with [Create React App](https://github.com/facebookincubator/create-react-app).
 
