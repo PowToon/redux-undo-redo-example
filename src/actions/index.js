@@ -9,15 +9,15 @@ export const addTodo = (text) => ({
 
 export const setVisibilityFilter = (filter) => ({
   type: 'SET_VISIBILITY_FILTER',
-  payload: filter
+  payload: {filter}
 })
 
 export const toggleTodo = (id) => ({
   type: 'TOGGLE_TODO',
-  payload: id
+  payload: {id}
 })
 
 export const deleteTodo = (id) => ({
   type: 'DELETE_TODO',
-  payload: id
+  payload: {id}
 })
