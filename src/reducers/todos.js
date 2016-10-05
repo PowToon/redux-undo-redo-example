@@ -31,6 +31,12 @@ const todos = (state = [], action) => {
       ]
     case 'DELETE_TODO':
       return state.filter(todo => todo.id !== payload.id)
+    case 'RESTORE_TODO':
+      return [
+        ...state.slice(0, payload.index),
+        payload.todo,
+        ...state.slice(payload.index)
+      ]
     case 'TOGGLE_TODO':
       return state.map(t =>
         todo(t, action)
