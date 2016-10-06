@@ -10,7 +10,7 @@
     "react-dom": "^15.3.0",
     "react-redux": "^4.4.5",
     "redux": "^3.5.2",
-    "redux-undo-redo": "^0.1.0"
+    "redux-undo-redo": "^1.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

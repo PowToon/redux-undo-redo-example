@@ -1,14 +1,13 @@
 const todo = (state, action) => {
-  const {type, payload} = action
-  switch (type) {
+  switch (action.type) {
     case 'ADD_TODO':
       return {
-        id: payload.id,
-        text: payload.text,
+        id: action.id,
+        text: action.text,
         completed: false
       }
     case 'TOGGLE_TODO':
-      if (state.id !== payload.id) {
+      if (state.id !== action.id) {
         return state
       }
 
@@ -22,20 +21,19 @@ const todo = (state, action) => {
 }
 
 const todos = (state = [], action) => {
-  const {type, payload} = action
-  switch (type) {
+  switch (action.type) {
     case 'ADD_TODO':
       return [
         ...state,
         todo(undefined, action)
       ]
     case 'DELETE_TODO':
-      return state.filter(todo => todo.id !== payload.id)
+      return state.filter(todo => todo.id !== action.id)
     case 'RESTORE_TODO':
       return [
-        ...state.slice(0, payload.index),
-        payload.todo,
-        ...state.slice(payload.index)
+        ...state.slice(0, action.index),
+        action.todo,
+        ...state.slice(action.index)
       ]
     case 'TOGGLE_TODO':
       return state.map(t =>

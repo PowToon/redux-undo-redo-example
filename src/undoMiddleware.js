@@ -8,7 +8,7 @@ export default createUndoMiddleware({
     'ADD_TODO': ({id}) => deleteTodo(id),
     'TOGGLE_TODO': ({id}) => toggleTodo(id),
     'DELETE_TODO': {
-      action: (payload, {todo, index}) => restoreTodo(todo, index),
+      action: (action, {todo, index}) => restoreTodo(todo, index),
       meta: (state, {id}) => {
         const index = state.todos.findIndex(todo => todo.id === id)
         return {
